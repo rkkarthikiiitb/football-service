@@ -1,0 +1,28 @@
+server:
+  servlet:
+    context-path: /league
+  port: 8090
+
+logging:
+  level:
+    org.springframework: ERROR
+    com.mkyong: DEBUG
+
+spring:
+  main:
+    banner-mode: "off"
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/leaguedb
+    username: football-service
+    password: football-service
+    hikari:
+      register-mbeans: true
+      leak-detection-threshold: 2000
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC

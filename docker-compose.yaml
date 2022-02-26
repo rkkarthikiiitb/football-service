@@ -1,0 +1,26 @@
+version: '2.1'
+
+services:
+  app:
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/leaguedb
+      - SPRING_DATASOURCE_USERNAME=football-service
+      - SPRING_DATASOURCE_PASSWORD=football-service
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: postgresdb
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=football-service
+      - POSTGRES_PASSWORD=football-service
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
