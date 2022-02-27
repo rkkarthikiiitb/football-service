@@ -1,4 +1,4 @@
-package com.league.football.service.config.api;
+package com.league.football.service.api;
 
 import com.league.football.service.entity.Clubs;
 import lombok.Builder;

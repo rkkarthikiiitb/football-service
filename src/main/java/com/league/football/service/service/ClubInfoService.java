@@ -1,6 +1,6 @@
 package com.league.football.service.service;
 
-import com.league.football.service.config.api.ClubInfoResponse;
+import com.league.football.service.api.ClubInfoResponse;
 import com.league.football.service.entity.Clubs;
 import com.league.football.service.repository.ClubsRepository;
 import lombok.RequiredArgsConstructor;
