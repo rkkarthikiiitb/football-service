@@ -26,3 +26,12 @@ spring:
       hibernate:
         jdbc:
           time_zone: UTC
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  #<2>
+  endpoint:
+    health:
+      show-details: ALWAYS
+
