@@ -16,21 +16,4 @@ spring:
     url: jdbc:postgresql://localhost:5432/leaguedb
     username: football-service
     password: football-service
-    hikari:
-      register-mbeans: true
-      leak-detection-threshold: 2000
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    properties:
-      hibernate:
-        jdbc:
-          time_zone: UTC
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"  #<2>
-  endpoint:
-    health:
-      show-details: ALWAYS
 
