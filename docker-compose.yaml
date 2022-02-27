@@ -20,7 +20,8 @@ services:
     ports:
       - '5432:5432'
     environment:
+      - POSTGRES_DB=leaguedb
       - POSTGRES_USER=football-service
       - POSTGRES_PASSWORD=football-service
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./src/test/resources:/docker-entrypoint-initdb.d
