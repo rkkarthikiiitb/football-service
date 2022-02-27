@@ -23,7 +23,7 @@ public class ClubsRepositoryTest {
     public void shouldSaveClub() {
         List<Clubs> clubsIterableBeforeSave = IterableUtils.toList(clubsRepository.findAll());
         Clubs clubs = new Clubs(7L, "West Ham", "Upton Park");
-        Clubs savedClub = clubsRepository.save(clubs);
+        clubsRepository.save(clubs);
         List<Clubs> clubsIterableAfterSave = IterableUtils.toList(clubsRepository.findAll());
         assertThat(clubsIterableBeforeSave.size()).isEqualTo(0);
         assertThat(clubsIterableAfterSave.size()).isEqualTo(1);
